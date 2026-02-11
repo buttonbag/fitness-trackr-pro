@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import Layout from "./layout/Layout";
 
 import { AuthProvider } from "./auth/AuthContext";
+import { BrowserRouter } from "react-router";
 // import { PageProvider } from "./layout/PageContext";
 
 createRoot(document.getElementById("root")).render(
