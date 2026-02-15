@@ -55,3 +55,10 @@ export async function deleteActivity(token, id) {
     throw Error(result.message);
   }
 }
+
+    export const getItem = async (activityId) => {
+      const response = await fetch(API + "/activities/" + activityId);
+      const result = await response.json();
+      console.log(result);
+      return result;
+    }
