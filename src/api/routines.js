@@ -40,7 +40,7 @@ export async function createRoutine(token, routine) {
  * Requests the API to delete the routine with the given ID.
  * A valid token is required.
  */
-export async function deleteActivity(token, id) {
+export async function deleteRoutine(token, id) {
   if (!token) {
     throw Error("You must be signed in to delete an activity.");
   }
@@ -56,3 +56,9 @@ export async function deleteActivity(token, id) {
   }
 }
 
+    export const getRoutineItem = async (routineId) => {
+      const response = await fetch(API + "/routines/" + routineId);
+      const result = await response.json();
+      console.log(result);
+      return result;
+    }

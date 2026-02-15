@@ -8,6 +8,7 @@ import Error404 from "./Error404.jsx";
 import { Route, Routes } from "react-router";
 import ActivityItem from "./activities/ActivityItem.jsx";
 import RoutinesPage from "./routines/RoutinesPage.jsx";
+import RoutineItem from "./routines/RoutineItem.jsx";
 
 /**
  * Fitness Trackr is a platform where fitness enthusiasts can share their workouts and
@@ -20,6 +21,7 @@ export default function App() {
       <Route element={ <Layout />}>
         <Route index element={ <ActivitiesPage />} />
         <Route path="/routines" element={ <RoutinesPage />} />
+        <Route path="/routine/:routineId" element={ <RoutineItem />} />
         <Route path="/activity/:activityId" element={<ActivityItem />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
