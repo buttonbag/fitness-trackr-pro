@@ -59,6 +59,6 @@ export async function deleteRoutine(token, id) {
     export const getRoutineItem = async (routineId) => {
       const response = await fetch(API + "/routines/" + routineId);
       const result = await response.json();
-      console.log(result);
+      // console.log(result);
       return result;
     }
