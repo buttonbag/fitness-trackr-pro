@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import { useAuth } from "../auth/AuthContext";
 import { deleteRoutine, getRoutineItem } from "../api/routines";
 import RoutineSets from "./RoutineSets";
+import RoutineForm from "./RoutineForm";
 
 export default function RoutineItem() {
   const {routineId} = useParams();
@@ -41,11 +42,11 @@ export default function RoutineItem() {
   return (
     <>
       <h1>Routine {currentRoutine.name}</h1>
-      <p>{currentRoutine.goal}</p>
-      <p>{currentRoutine.creatorName}</p>
-      <RoutineSets routineSets={currentRoutine} />
-      {token && <button onClick={tryDelete}>Delete</button>}
+      <p>Goal: {currentRoutine.goal}</p>
+      <p>Created by: {currentRoutine.creatorName}</p>
       {error && <p role="alert">{error}</p>}
+      {token && <button onClick={tryDelete}>Delete routine</button>}
+      <RoutineSets routineSets={currentRoutine} />
     </>
 
   )

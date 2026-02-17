@@ -18,12 +18,13 @@ export default function RoutineSets({routineSets}) {
   
   return (
     <>
+      <h3>Sets:</h3>
       {currentRoutineSets.map((set)=>{
         return (
           <>
-            <p>Name: {set.name}</p>
-            <p>Description: {set.description}</p>
-            <p>Reps: {set.count}</p>
+            <p>{set.name} x {set.count}</p>
+            <p>{set.description}</p>
+            <button>delete set</button>
           </>
           )
       })}
